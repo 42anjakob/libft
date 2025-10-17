@@ -1,16 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   atoi.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjakob <anjakob@student.42heilbronn.de>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-14 14:30:59 by anjakob           #+#    #+#             */
-/*   Updated: 2025-10-14 14:30:59 by anjakob          ###   ########.fr       */
+/*   Created: 2025-10-17 11:50:16 by anjakob           #+#    #+#             */
+/*   Updated: 2025-10-17 11:50:16 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_atoi(const char *nptr)
 {
-	return (c > -1 && c < 128);
+	int res;
+	int	sign;
+
+	res = 0;
+	sign = 1;
+	while (*nptr == '\t' || *nptr == '\n' || *nptr == '\v'
+		|| *nptr == '\f' || *nptr == '\r' || *nptr == ' ')
+		nptr++;
+	if (*nptr == '-')
+		sign = -1;
+	if (*nptr == '-' || *nptr == '+')
+		nptr++;
+	while (nptr && *nptr >= '0' && *nptr <= '9')
+	{
+		res = res * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (res * sign);
 }

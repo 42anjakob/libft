@@ -1,16 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isascii.c                                          :+:      :+:    :+:   */
+/*   strnstr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjakob <anjakob@student.42heilbronn.de>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-14 14:30:59 by anjakob           #+#    #+#             */
-/*   Updated: 2025-10-14 14:30:59 by anjakob          ###   ########.fr       */
+/*   Created: 2025-10-17 11:50:18 by anjakob           #+#    #+#             */
+/*   Updated: 2025-10-17 11:50:18 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	return (c > -1 && c < 128);
+	if (little[0] == '\0')
+		return ((char *)big);
+	size_t	i;
+	size_t	j;
+	
+	i = 0;
+	j = 0;
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (little[j] && little[j] == big[i + j] && i + j < len)
+		{
+			j++;
+			if (!little[j])
+				return ((char *)&big[i]);
+		}
+		i++;
+	}
+	return (NULL);
 }
