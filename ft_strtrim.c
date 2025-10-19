@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anjakob <anjakob@student.42heilbronn.de>   #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-16 13:10:07 by anjakob           #+#    #+#             */
-/*   Updated: 2025-10-16 13:10:07 by anjakob          ###   ########.fr       */
+/*   Created: 2025-10-17 15:18:33 by anjakob           #+#    #+#             */
+/*   Updated: 2025-10-17 15:18:33 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	strnlen(const char *dst, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
+	if (!set)
+		return (NULL);
+	else if (!*s1)
+		return(ft_strdup(""));
+	char	*trim_s;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (dst[i] && i < size)
+	j = ft_strlen(s1) - 1;
+	while (ft_strchr(set, s1[i]))
 		i++;
-	return (i);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
-{
-	size_t dst_size;
-
-	dst_size = strnlen(dst, size);
-	ft_strlcpy(&dst[dst_size], src, size - dst_size);
-	return (dst_size + ft_strlen(src));
+	while (ft_strchr(set, s1[j]))
+		j--;
+	trim_s = ft_substr(s1, i, j - i + 1);
+	return (trim_s);
 }

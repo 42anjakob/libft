@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	*ft_memrcpy(void *dest, const void *src, size_t n)
+static void	*memrcpy(void *dest, const void *src, size_t n)
 {
 	if (n == 0)
 		return (dest);
@@ -33,5 +33,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	else if (dest <= src)
 		return (ft_memcpy(dest, src, n));
-	return (ft_memrcpy(dest, src, n));
+	return (memrcpy(dest, src, n));
 }
