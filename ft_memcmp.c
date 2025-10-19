@@ -14,8 +14,6 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (n == 0)
-		return (0);
 	unsigned char	*cast_s1;
 	unsigned char	*cast_s2;
 	size_t			i;
@@ -23,7 +21,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	cast_s1 = (unsigned char *)s1;
 	cast_s2 = (unsigned char *)s2;
 	i = 0;
-	while(cast_s1[i] == cast_s2[i] && i < n - 1)
+	if (n == 0)
+		return (0);
+	while (cast_s1[i] == cast_s2[i] && i < n - 1)
 		i++;
 	return (cast_s1[i] - cast_s2[i]);
 }

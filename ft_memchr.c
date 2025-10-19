@@ -14,8 +14,6 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (n == 0)
-		return (NULL);
 	unsigned char	*cast_s;
 	unsigned char	cast_c;
 	size_t			i;
@@ -23,7 +21,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	cast_s = (unsigned char *)s;
 	cast_c = (unsigned char)c;
 	i = 0;
-	while(cast_s[i] != cast_c && i < n - 1)
+	if (n == 0)
+		return (NULL);
+	while (cast_s[i] != cast_c && i < n - 1)
 		i++;
 	if (cast_s[i] == cast_c)
 		return (&cast_s[i]);

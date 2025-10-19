@@ -14,7 +14,7 @@
 
 static size_t	strnlen(const char *dst, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (dst[i] && i < size)
@@ -24,7 +24,7 @@ static size_t	strnlen(const char *dst, size_t size)
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dst_size;
+	size_t	dst_size;
 
 	dst_size = strnlen(dst, size);
 	ft_strlcpy(&dst[dst_size], src, size - dst_size);

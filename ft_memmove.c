@@ -14,13 +14,13 @@
 
 static void	*memrcpy(void *dest, const void *src, size_t n)
 {
-	if (n == 0)
-		return (dest);
 	const unsigned char	*cast_src;
 	unsigned char		*cast_dest;
 
 	cast_src = (const unsigned char *)src;
 	cast_dest = (unsigned char *)dest;
+	if (n == 0)
+		return (dest);
 	while (--n)
 		cast_dest[n] = cast_src[n];
 	cast_dest[n] = cast_src[n];
