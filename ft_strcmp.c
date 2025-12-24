@@ -6,7 +6,7 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 16:52:49 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/24 16:52:57 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/24 16:59:50 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 {
 	unsigned char	*cast_s1;
 	unsigned char	*cast_s2;
-	int					i;
+	int				i;
 
 	cast_s1 = (unsigned char *)s1;
 	cast_s2 = (unsigned char *)s2;
