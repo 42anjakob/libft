@@ -6,7 +6,7 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 14:23:19 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/25 14:24:26 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/25 14:54:28 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_freeptr(char **ptr)
 {
-	size_t			i;
+	size_t	i;
 
 	i = 0;
 	while (ptr[i])

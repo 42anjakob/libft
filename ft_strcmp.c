@@ -6,11 +6,9 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 16:52:49 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/24 16:59:50 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/25 14:56:09 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
@@ -24,7 +22,11 @@ int	ft_strcmp(const char *s1, const char *s2)
 	if (!s1 && !s2)
 		return (0);
 	if (!s1 || !s2)
-		return (!s1) ? -1 : 1;
+	{
+		if (!s1)
+			return (-1);
+		return (1);
+	}
 	while (cast_s1[i] && cast_s2[i] && cast_s1[i] == cast_s2[i])
 		i++;
 	return (cast_s1[i] - cast_s2[i]);

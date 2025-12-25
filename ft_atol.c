@@ -6,11 +6,9 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 14:33:20 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/25 14:40:30 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/25 14:54:31 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 long	ft_atol(const char *nptr)
 {
