@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anjakob <anjakob@student.42heilbronn.de>   #+#  +:+       +#+        */
+/*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-10-17 15:58:05 by anjakob           #+#    #+#             */
-/*   Updated: 2025-10-17 15:58:05 by anjakob          ###   ########.fr       */
+/*   Created: 2025/10/17 15:58:05 by anjakob           #+#    #+#             */
+/*   Updated: 2025/12/25 14:23:51 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static void	freeptr(char **ptr)
-{
-	size_t			i;
-
-	i = 0;
-	while (ptr[i])
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
-}
 
 static size_t	countsubstr(const char *s, const char c)
 {
@@ -77,7 +64,7 @@ char	**ft_split(char const *s, char c)
 		size = substr_pos_size(s, c, &cur_pos);
 		substr[i] = ft_substr(s, cur_pos, size);
 		if (!substr[i])
-			return (freeptr(substr), NULL);
+			return (ft_freeptr(substr), NULL);
 		cur_pos += size;
 		i++;
 	}
