@@ -6,13 +6,13 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 14:23:19 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/25 14:54:28 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/25 15:26:09 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freeptr(char **ptr)
+void	ft_freeptr(void **ptr)
 {
 	size_t	i;
 

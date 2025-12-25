@@ -6,7 +6,7 @@
 /*   By: anjakob <anjakob@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:17:44 by anjakob           #+#    #+#             */
-/*   Updated: 2025/12/25 14:46:15 by anjakob          ###   ########.fr       */
+/*   Updated: 2025/12/25 15:26:26 by anjakob          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n);
 int		ft_atoi(const char *nptr);
 long	ft_atol(const char *nptr);
 
-void	ft_freeptr(char **ptr);
+void	ft_freeptr(void **ptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 char	*ft_strdup(const char *s);
