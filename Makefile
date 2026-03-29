@@ -1,6 +1,6 @@
 NAME		=	libft.a
 
-FLAGS		=	-c -Wall -Wextra -Werror
+CFLAGS		=	-c -Wall -Wextra -Werror
 
 SRCS		=	ft_isalpha.c	\
 				ft_isdigit.c	\
@@ -61,7 +61,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)/%.o: %.c
 	@mkdir -p $(OBJS_DIR)
-	@$(CC) $(FLAGS) $< -o $@
+	@$(CC) $(CFLAGS) $< -o $@
 
 clean:
 	@rm -rf $(OBJS_DIR)
